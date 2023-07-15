@@ -91,24 +91,21 @@ button{
                 let email=document.getElementById("Email").value;
                 let phone=document.getElementById("phone").value;
                 let timedate=document.getElementById("time").value;
-                
+                let myobj={
+                    Name:name,
+                   Email:email,
+                   Phone:phone,
+                   Timedate:timedate
+                 }
+                let data_serializale=JSON.stringify(myobj)
 
                 if (name.value == "" || email.value == "" ||phone.value == "" || timedate.value == "") {
                           alert("Ensure you input a value in both fields!");
                  } 
                  else {
     // perform operation with form input
-                 localStorage.setItem("Name",name);
-                localStorage.setItem("Email",email);
-                localStorage.setItem("phone",phone);
-                localStorage.setItem("time",timedate);
-        alert("This form has been successfully submitted!");
-    console.log("This form has a name of  and email of"+ localStorage.getItem('Name') +"and phone no of"+ localStorage.getItem('Phone'));
-      name.value = "";
-    email.value = "";
-    phone.value = "";
-    timedate.value = "";
-
+                 localStorage.setItem(email,data_serializable);
+                 alert("This form has been successfully submitted!");
             }
         }
     
